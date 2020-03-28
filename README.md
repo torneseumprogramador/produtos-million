@@ -1,2 +1,1 @@
-# produtos-million
-Primeiro pull request
+Todas as depêndencias do projeto estão no package.json, basta executar "npm install" para instalá-las
