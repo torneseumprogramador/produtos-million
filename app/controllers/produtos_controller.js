@@ -2,6 +2,17 @@ const Produto = require('../models/produto');
 const TOKEN = "e5bb38b104fc12c115af9f7d702e9bce380eccf2"
 
 const ProdutoController = {
+  index: async (req,res,next)=>{
+
+    if(req.headers.token==TOKEN){
+      const prod = await Produto.find({});
+      return res.status(200).send(prod);
+
+    }else{
+      res.status(401).send({error:'Acesso negado API produtos-Token header inválido'});
+    }
+
+  },
   create: async(req, res, next) => {
     if(req.headers.token == TOKEN){
       try {
