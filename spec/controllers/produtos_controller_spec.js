@@ -7,17 +7,13 @@ describe("ProdutoController", () => {
     await Produto.deleteMany({}, async(err,removed) => {
       
       await Produto.create({
-        nome: `Produto ${new Date().getTime()}`,
-        descricao:`É claro que o consenso sobre a necessidade de qualificação garante 
-                   a contribuição de um grupo importante na determinação dos métodos 
-                   utilizados na avaliação de resultados.`,
+        nome: `Ações`,
+        descricao:`Parcelas que compõem o capital social de uma empresa. `,
         nivel_investidor: 3})
       
       await Produto.create({
-        nome: `Produto ${new Date().getTime()}`,
-        descricao:`É claro que o consenso sobre a necessidade de qualificação garante 
-                   a contribuição de um grupo importante na determinação dos métodos 
-                   utilizados na avaliação de resultados.`,
+        nome: `Tesouro Direto`,
+        descricao:`Programa do Tesouro Nacional do Brasil com o intuito de democratizar a compra e venda de títulos públicos federais por pessoas físicas através da internet.`,
         nivel_investidor: 8})
     })
   })
@@ -39,4 +35,28 @@ describe("ProdutoController", () => {
       done();
     });
   });
+
+  describe("GET/produtos.json - Deve retornar uma lista de Produtos ",() =>{
+    it('Deve retornar o statuscode 200', async(done)=>{
+      const config={
+        headers:{'token': 'e5bb38b104fc12c115af9f7d702e9bce380eccf2'}
+      }
+      const response = await axios.get(`${host}/produtos.json`, config)
+      expect(response.status).toBe(200);
+      done();
+    });
+
+    it('Deve retornar o nome dos produtos cadastrados no beforeEach',async(done)=>{
+    const config={
+      headers:{'token': 'e5bb38b104fc12c115af9f7d702e9bce380eccf2'}
+    }
+    const response = await axios.get(`${host}/produtos.json`,config)
+    const itens = response.data;
+    expect(itens[0].nome).toBe("Ações");
+    expect(itens[1].nome).toBe("Tesouro Direto");
+    done();
+
+    });
+  });
+
 });
