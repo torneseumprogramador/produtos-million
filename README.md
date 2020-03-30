@@ -26,3 +26,5 @@ Para instalar todas as dependências do projeto executar o comando "npm install"
 ## Testes
 
 Para realizar a bateria de testes para executar o comando "npm test"
+
+Teste Rosangela
