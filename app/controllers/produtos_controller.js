@@ -30,7 +30,8 @@ const ProdutoController = {
     else {
       res.status(401).send(`Acesso negado, token inválido`)
     }
-  }
+  },
+  
 }
 
 module.exports = ProdutoController;
