@@ -40,4 +40,12 @@ describe("Deve retornar se o modelo de Produto", () => {
       expect(err !== undefined && err !== null).toBe(true);
     });
   });
+
+
+  it('Deve retornar o modelo de produtos',()=>{
+    Produto.find().then(dado=>{
+      expect(dado!=undefined).toBe(true);
+    })
+
+  });
 });
