@@ -31,7 +31,24 @@ const ProdutoController = {
       res.status(401).send(`Acesso negado, token inválido`)
     }
   },
-  
+  change: async(req, res, next) => {
+    if(req.headers.token == TOKEN)
+    {
+      try
+      {
+          await Produto.findOneAndUpdate({_id: req.params.produto_id}, { nome: req.body.nome, descricao: req.body.descricao,  nivel_investidor: req.body.nivel_investidor })
+          res.status(204).send(`Alterado com o id ${req.params.produto_id}`)
+      }
+      catch(err)
+      {
+        res.status(401).send(`Erro: ${err}`)
+      }
+    }
+    else
+    {
+      res.status(401).send(`Acesso negado, token inválido`)
+    }
+  },
 }
 
 module.exports = ProdutoController;
