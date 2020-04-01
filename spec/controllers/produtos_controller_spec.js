@@ -84,11 +84,11 @@ describe("ProdutoController", () => {
       console.log(produto._id);
 
       const body = { 
-         nome,
+         nome: nome,
          descricao: nome + `Parcelas que compõem o capital social de uma empresa. `,
          nivel_investidor: 9 
       }
-        const response = await axios.put(`${host}/produto/${produto._id}.json`, body, config)
+        const response = await axios.put(`${host}/produtos/${produto._id}.json`, body, config)
         expect(response.status).toBe(204);
         done();
       });
