@@ -70,7 +70,7 @@ describe("ProdutoController", () => {
 
  describe("PUT /produtos.json - Produto", () => {
     it("deve alterar um produto", async(done) => {
-      const config={
+      const config = {
         headers:{'token': 'e5bb38b104fc12c115af9f7d702e9bce380eccf2'}
       }    
 
@@ -93,7 +93,4 @@ describe("ProdutoController", () => {
         done();
       });
     });
-
-
-
 });
