@@ -7,5 +7,6 @@ router.get("/", HomeController.index);
 router.get("/produtos.json",ProdutoController.index);
 router.post("/produtos.json", ProdutoController.create);
 router.put('/produtos/:produto_id.json', ProdutoController.change);
+router.delete('/produtos/:produto_id.json', ProdutoController.remover);
 		
 module.exports = router;

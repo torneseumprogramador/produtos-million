@@ -49,6 +49,24 @@ const ProdutoController = {
       res.status(401).send(`Acesso negado, token inválido`)
     }
   },
+  remover: async(req, res, next) => {
+    if(req.headers.token == TOKEN)
+    {
+      try 
+      {
+        await Produto.findOneAndDelete({_id: req.params.produto_id})
+        res.status(200).send(`Deletando um id ${req.params.produto_id}`)
+      } 
+      catch (err) 
+      {
+        res.status(401).send(`Erro: ${err}`)
+      }
+    }
+    else
+    {
+      res.status(401).send(`Acesso negado, token inválido`)
+    }
+  }
 }
 
 module.exports = ProdutoController;
