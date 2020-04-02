@@ -81,7 +81,6 @@ describe("ProdutoController", () => {
         descricao:`Parcelas que compõem o capital social de uma empresa. `,
         nivel_investidor: 3
       } )
-      console.log(produto._id);
 
       const body = { 
          nome: nome,
