@@ -30,7 +30,7 @@ Para realizar a bateria de testes para executar o comando "npm test"
 ## Instruções de uso
 
 ### Lista de Produtos
-Request com o método **GET** para **/produtos.json** lista os produtos cadastrados.
+Request com o método **GET** para **/produtos.json** lista os produtos cadastrados.  
 Dentro do **header**, enviar a propriedade **token** com o seu **token** de acesso.
 
 Exemplo de  request:
@@ -55,7 +55,7 @@ request(options, function (error, response) {
 
 ### Cadastro de produtos
 
-Request com o método **POST** para **/produtos.json** cadastra novos produtos.
+Request com o método **POST** para **/produtos.json** cadastra novos produtos.  
 Enviar paramêtros **nome, descricao e nivel_investidor** via **application/x-www-form-urlencoded** e dentro do **header**, enviar a propriedade **token** com o seu **token de acesso**.
 
 Exemplo de request:
@@ -89,12 +89,12 @@ request(options, function (error, response) {
 });
 ```
 
-As propriedades **nome** e **nivel_investidor** são obrigatórias.
+As propriedades **nome** e **nivel_investidor** são obrigatórias.  
 Lembrando também que a propriedade **nivel_investidor** deve conter um valor inteiro entre 1 e 10.
 
 ### Atualização de produto
 
-Para alterar os dados de um produto  basta enviar um request com o método **PUT** para **/produtos/:id.json** passando como parâmetro o **_id** do produto na **query** do request.
+Para alterar os dados de um produto  basta enviar um request com o método **PUT** para **/produtos/:id.json** passando como parâmetro o **_id** do produto na **query** do request.  
 Os parâmetros (nome, descricao ou nivel_investidor) que serão atualizados devem ser enviados via **body** no formato **application/x-www-form-urlencoded** e dentro do **header**, enviar a propriedade **token** com o seu **token de acesso**.
 
 Exemplo de request:
@@ -129,7 +129,7 @@ Lembrando que a propriedade **nivel_investidor** deve conter um valor inteiro en
 
 ### Remoção de um produto
 
-Para alterar os dados de um produto  basta enviar um request com o método **DELETE** para **/produtos/:id.json** passando como parâmetro o **_id** do produto na **query** do request.
+Para alterar os dados de um produto  basta enviar um request com o método **DELETE** para **/produtos/:id.json** passando como parâmetro o **_id** do produto na **query** do request.  
 No **header**, enviar a propriedade **token** com o seu **token de acesso**.
 
 Exemplo de request:
