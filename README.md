@@ -138,7 +138,7 @@ Exemplo de request:
 var request = require('request');
 
 var options = {
-	'method': PUT,
+	'method': DELETE,
 	'url': 'https://localhost:3000/produtos/:id.json',
 	
 	'headers': {
